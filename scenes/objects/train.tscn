@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://7brtuo55ofad"]
+
+[ext_resource type="Script" uid="uid://da25bvqoamdsk" path="res://scripts/train.gd" id="1_0uvhi"]
+[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="1_3ur6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjq6"]
+
+[node name="Train" type="PathFollow2D" unique_id=10743402]
+loop = false
+script = ExtResource("1_0uvhi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=947440215]
+scale = Vector2(0.6, 0.3)
+texture = ExtResource("1_3ur6n")
+
+[node name="SensorArea" type="Area2D" parent="." unique_id=296440728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorArea" unique_id=1609414032]
+shape = SubResource("RectangleShape2D_jcjq6")

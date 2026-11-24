@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://kcur10tr28do"]
+
+[ext_resource type="Script" uid="uid://by5eti45melce" path="res://scripts/level_01.gd" id="1_m802k"]
+[ext_resource type="PackedScene" uid="uid://bjhweaiw38148" path="res://scenes/objects/rail_signal.tscn" id="2_2djvx"]
+[ext_resource type="PackedScene" uid="uid://7brtuo55ofad" path="res://scenes/objects/train.tscn" id="2_uvc87"]
+[ext_resource type="PackedScene" uid="uid://bhs6isdxncdrs" path="res://scenes/objects/track_switch.tscn" id="3_uvc87"]
+
+[sub_resource type="Curve2D" id="Curve2D_m802k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 150, 500, 0, 0, 0, 0, 700, 500)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_i2aat"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 700, 500, 0, 0, 0, 0, 1600, 500)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_2djvx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 700, 500, 0, 0, 0, 0, 1600, 800)
+}
+point_count = 2
+
+[node name="Level01" type="Node2D" unique_id=1247308202]
+script = ExtResource("1_m802k")
+
+[node name="EntryPath" type="Path2D" parent="." unique_id=806013658]
+curve = SubResource("Curve2D_m802k")
+
+[node name="Line2D" type="Line2D" parent="EntryPath" unique_id=2084589082]
+
+[node name="Train" parent="EntryPath" unique_id=10743402 instance=ExtResource("2_uvc87")]
+position = Vector2(150, 500)
+
+[node name="StraightPath" type="Path2D" parent="." unique_id=724308082]
+curve = SubResource("Curve2D_i2aat")
+
+[node name="Line2D" type="Line2D" parent="StraightPath" unique_id=297288704]
+
+[node name="BranchPath" type="Path2D" parent="." unique_id=1457126983]
+curve = SubResource("Curve2D_2djvx")
+
+[node name="Line2D" type="Line2D" parent="BranchPath" unique_id=692586795]
+
+[node name="RailSignal" parent="." unique_id=461563530 instance=ExtResource("2_2djvx")]
+position = Vector2(550, 500)
+
+[node name="TrackSwitch" parent="." unique_id=656361100 node_paths=PackedStringArray("straight_path", "branch_path") instance=ExtResource("3_uvc87")]
+position = Vector2(700, 500)
+scale = Vector2(0.5, 0.5)
+straight_path = NodePath("../StraightPath")
+branch_path = NodePath("../BranchPath")

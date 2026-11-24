@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bhs6isdxncdrs"]
+
+[ext_resource type="Script" uid="uid://bgnqvrgppa18" path="res://scripts/track_switch.gd" id="1_1dqbi"]
+[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="2_5aywq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqn2k"]
+
+[node name="TrackSwitch" type="Area2D" unique_id=656361100]
+script = ExtResource("1_1dqbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75799015]
+shape = SubResource("CircleShape2D_mqn2k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2019231760]
+texture = ExtResource("2_5aywq")

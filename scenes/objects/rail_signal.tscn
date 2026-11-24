@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bjhweaiw38148"]
+
+[ext_resource type="Script" uid="uid://duybxbjcl774j" path="res://scripts/rail_signal.gd" id="1_jk4lw"]
+[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="1_tad6m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jcjq6"]
+
+[node name="RailSignal" type="Area2D" unique_id=461563530]
+script = ExtResource("1_jk4lw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1914652993]
+shape = SubResource("CircleShape2D_jcjq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=405711840]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_tad6m")
