@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cmwo1rvfqmpab"]
+
+[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="1_7y141"]
+[ext_resource type="Script" uid="uid://2fihywy7777c" path="res://scripts/station_goal.gd" id="1_ckshv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjq6"]
+
+[node name="StationGoal" type="Area2D" unique_id=2026654803]
+script = ExtResource("1_ckshv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=764662138]
+shape = SubResource("RectangleShape2D_jcjq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=82829983]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_7y141")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bnhwtrjoyjev2"]
+
+[ext_resource type="Script" uid="uid://wiyb0jpwxcs8" path="res://scripts/rail_barrier.gd" id="1_jbvu7"]
+[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="1_krqtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjq6"]
+
+[node name="RailBarrier" type="Area2D" unique_id=212173070]
+script = ExtResource("1_jbvu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500853377]
+shape = SubResource("RectangleShape2D_jcjq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1481848936]
+scale = Vector2(0.3, 0.7)
+texture = ExtResource("1_krqtr")

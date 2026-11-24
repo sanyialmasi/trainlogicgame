@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://by5eti45melce" path="res://scripts/level_01.gd" id="1_m802k"]
 [ext_resource type="PackedScene" uid="uid://bjhweaiw38148" path="res://scenes/objects/rail_signal.tscn" id="2_2djvx"]
 [ext_resource type="PackedScene" uid="uid://7brtuo55ofad" path="res://scenes/objects/train.tscn" id="2_uvc87"]
+[ext_resource type="PackedScene" uid="uid://cmwo1rvfqmpab" path="res://scenes/objects/station_goal.tscn" id="3_50wog"]
 [ext_resource type="PackedScene" uid="uid://bhs6isdxncdrs" path="res://scenes/objects/track_switch.tscn" id="3_uvc87"]
+[ext_resource type="PackedScene" uid="uid://bnhwtrjoyjev2" path="res://scenes/objects/rail_barrier.tscn" id="6_1ey3t"]
 
 [sub_resource type="Curve2D" id="Curve2D_m802k"]
 _data = {
@@ -19,7 +21,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_2djvx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 700, 500, 0, 0, 0, 0, 1600, 800)
+"points": PackedVector2Array(0, 0, 250, 0, 700, 500, -250, 0, 0, 0, 1600, 800)
 }
 point_count = 2
 
@@ -32,6 +34,7 @@ curve = SubResource("Curve2D_m802k")
 [node name="Line2D" type="Line2D" parent="EntryPath" unique_id=2084589082]
 
 [node name="Train" parent="EntryPath" unique_id=10743402 instance=ExtResource("2_uvc87")]
+z_index = 10
 position = Vector2(150, 500)
 
 [node name="StraightPath" type="Path2D" parent="." unique_id=724308082]
@@ -50,5 +53,38 @@ position = Vector2(550, 500)
 [node name="TrackSwitch" parent="." unique_id=656361100 node_paths=PackedStringArray("straight_path", "branch_path") instance=ExtResource("3_uvc87")]
 position = Vector2(700, 500)
 scale = Vector2(0.5, 0.5)
+is_branching = true
 straight_path = NodePath("../StraightPath")
 branch_path = NodePath("../BranchPath")
+
+[node name="RailBarrier" parent="." unique_id=212173070 instance=ExtResource("6_1ey3t")]
+position = Vector2(1100, 500)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=140857315]
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer" unique_id=824565747]
+visible = false
+offset_left = 200.0
+offset_top = 50.0
+offset_right = 265.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 32
+text = "Újra"
+
+[node name="RestartButton" type="Button" parent="CanvasLayer" unique_id=365864155]
+visible = false
+offset_left = 850.0
+offset_top = 200.0
+offset_right = 891.0
+offset_bottom = 231.0
+text = "Újra"
+
+[node name="StationGoal" parent="." unique_id=2026654803 instance=ExtResource("3_50wog")]
+modulate = Color(0.16703606, 0.5991593, 0.41659364, 1)
+position = Vector2(1550, 500)
+
+[node name="StationGoal2" parent="." unique_id=752858920 instance=ExtResource("3_50wog")]
+modulate = Color(0.74288017, 0.15355378, 0.34102935, 1)
+position = Vector2(1550, 780)
+is_correct_destination = false
+station_name = "2-es peron"
