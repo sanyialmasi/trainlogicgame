@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmwo1rvfqmpab"]
 
-[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="1_7y141"]
 [ext_resource type="Script" uid="uid://2fihywy7777c" path="res://scripts/station_goal.gd" id="1_ckshv"]
+[ext_resource type="Texture2D" uid="uid://ddqcg3vuxs73a" path="res://assets/textures/objects/station-green.png" id="2_ckshv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjq6"]
 
@@ -12,5 +12,6 @@ script = ExtResource("1_ckshv")
 shape = SubResource("RectangleShape2D_jcjq6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=82829983]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_7y141")
+position = Vector2(6, -104.000015)
+scale = Vector2(0.21309523, 0.20444444)
+texture = ExtResource("2_ckshv")

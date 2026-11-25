@@ -1,6 +1,8 @@
 class_name Train
 extends PathFollow2D
 
+@export var train_texture: Texture2D
+
 signal level_completed(message: String)
 signal level_failed(reason: String)
 
@@ -9,8 +11,11 @@ var is_stopped: bool = false
 var current_signal: RailSignal = null
 
 func _ready() -> void:
+	if train_texture != null:
+		$Sprite2D.texture = train_texture
 	$SensorArea.area_entered.connect(_on_area_entered)
 	$SensorArea.area_exited.connect(_on_area_exited)
+
 
 func _process(delta: float) -> void:
 	if current_signal != null:

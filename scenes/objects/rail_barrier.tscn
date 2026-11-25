@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://bnhwtrjoyjev2"]
 
 [ext_resource type="Script" uid="uid://wiyb0jpwxcs8" path="res://scripts/rail_barrier.gd" id="1_jbvu7"]
-[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="1_krqtr"]
+[ext_resource type="Texture2D" uid="uid://dmvivc82suxbu" path="res://assets/textures/objects/boom-barrier-up.png" id="2_w6kjt"]
+[ext_resource type="Texture2D" uid="uid://cg0nclk45ugjb" path="res://assets/textures/objects/boom-barrier-down.png" id="3_nqrd4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jcjq6"]
+size = Vector2(1232.6426, 1533.4557)
 
 [node name="RailBarrier" type="Area2D" unique_id=212173070]
+scale = Vector2(0.05, 0.05)
 script = ExtResource("1_jbvu7")
+open_texture = ExtResource("2_w6kjt")
+closed_texture = ExtResource("3_nqrd4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=500853377]
+position = Vector2(-376.14984, -26.149744)
+scale = Vector2(2.4599993, 2.4599993)
 shape = SubResource("RectangleShape2D_jcjq6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1481848936]
-scale = Vector2(0.3, 0.7)
-texture = ExtResource("1_krqtr")
+texture = ExtResource("2_w6kjt")

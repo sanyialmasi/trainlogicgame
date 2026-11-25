@@ -10,7 +10,8 @@ loop = false
 script = ExtResource("1_0uvhi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=947440215]
-scale = Vector2(0.6, 0.3)
+position = Vector2(0, -18)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_3ur6n")
 
 [node name="SensorArea" type="Area2D" parent="." unique_id=296440728]

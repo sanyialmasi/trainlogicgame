@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhs6isdxncdrs"]
 
 [ext_resource type="Script" uid="uid://bgnqvrgppa18" path="res://scripts/track_switch.gd" id="1_1dqbi"]
-[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="2_5aywq"]
+[ext_resource type="Texture2D" uid="uid://bh37f2gsc1kmy" path="res://assets/textures/objects/lever.png" id="2_5aywq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mqn2k"]
 
@@ -9,7 +9,9 @@
 script = ExtResource("1_1dqbi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=75799015]
+scale = Vector2(11.495, 11.495)
 shape = SubResource("CircleShape2D_mqn2k")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2019231760]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_5aywq")

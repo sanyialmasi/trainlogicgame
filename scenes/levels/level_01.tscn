@@ -3,9 +3,13 @@
 [ext_resource type="Script" uid="uid://by5eti45melce" path="res://scripts/level_01.gd" id="1_m802k"]
 [ext_resource type="PackedScene" uid="uid://bjhweaiw38148" path="res://scenes/objects/rail_signal.tscn" id="2_2djvx"]
 [ext_resource type="PackedScene" uid="uid://7brtuo55ofad" path="res://scenes/objects/train.tscn" id="2_uvc87"]
+[ext_resource type="Texture2D" uid="uid://dvpie27wpladf" path="res://assets/textures/trains/mk45-mozdony.png" id="3_1ey3t"]
 [ext_resource type="PackedScene" uid="uid://cmwo1rvfqmpab" path="res://scenes/objects/station_goal.tscn" id="3_50wog"]
 [ext_resource type="PackedScene" uid="uid://bhs6isdxncdrs" path="res://scenes/objects/track_switch.tscn" id="3_uvc87"]
 [ext_resource type="PackedScene" uid="uid://bnhwtrjoyjev2" path="res://scenes/objects/rail_barrier.tscn" id="6_1ey3t"]
+[ext_resource type="Texture2D" uid="uid://cm3n83xu8rl4b" path="res://assets/textures/environment/pinewood.png" id="8_t0hvh"]
+[ext_resource type="Texture2D" uid="uid://b8loona0v4uhi" path="res://assets/textures/environment/tree-circle2.png" id="9_r72dd"]
+[ext_resource type="Texture2D" uid="uid://b8ja0p87rfjwc" path="res://assets/textures/environment/tree-circle5.png" id="10_ijn0p"]
 
 [sub_resource type="Curve2D" id="Curve2D_m802k"]
 _data = {
@@ -28,6 +32,13 @@ point_count = 2
 [node name="Level01" type="Node2D" unique_id=1247308202]
 script = ExtResource("1_m802k")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=624874180]
+z_index = -10
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.27248174, 0.42976403, 0.2045351, 1)
+
 [node name="EntryPath" type="Path2D" parent="." unique_id=806013658]
 curve = SubResource("Curve2D_m802k")
 
@@ -36,6 +47,7 @@ curve = SubResource("Curve2D_m802k")
 [node name="Train" parent="EntryPath" unique_id=10743402 instance=ExtResource("2_uvc87")]
 z_index = 10
 position = Vector2(150, 500)
+train_texture = ExtResource("3_1ey3t")
 
 [node name="StraightPath" type="Path2D" parent="." unique_id=724308082]
 curve = SubResource("Curve2D_i2aat")
@@ -51,14 +63,14 @@ curve = SubResource("Curve2D_2djvx")
 position = Vector2(550, 500)
 
 [node name="TrackSwitch" parent="." unique_id=656361100 node_paths=PackedStringArray("straight_path", "branch_path") instance=ExtResource("3_uvc87")]
-position = Vector2(700, 500)
+position = Vector2(703, 449)
 scale = Vector2(0.5, 0.5)
 is_branching = true
 straight_path = NodePath("../StraightPath")
 branch_path = NodePath("../BranchPath")
 
 [node name="RailBarrier" parent="." unique_id=212173070 instance=ExtResource("6_1ey3t")]
-position = Vector2(1100, 500)
+position = Vector2(1200, 498)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=140857315]
 
@@ -80,11 +92,24 @@ offset_bottom = 231.0
 text = "Újra"
 
 [node name="StationGoal" parent="." unique_id=2026654803 instance=ExtResource("3_50wog")]
-modulate = Color(0.16703606, 0.5991593, 0.41659364, 1)
-position = Vector2(1550, 500)
+position = Vector2(1529, 497)
 
 [node name="StationGoal2" parent="." unique_id=752858920 instance=ExtResource("3_50wog")]
-modulate = Color(0.74288017, 0.15355378, 0.34102935, 1)
-position = Vector2(1550, 780)
+position = Vector2(1580, 800)
 is_correct_destination = false
 station_name = "2-es peron"
+
+[node name="Pinewood" type="Sprite2D" parent="." unique_id=1017553046]
+position = Vector2(332, 757)
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("8_t0hvh")
+
+[node name="TreeCircle2" type="Sprite2D" parent="." unique_id=1157129751]
+position = Vector2(533, 205.00003)
+scale = Vector2(0.122628726, 0.111197546)
+texture = ExtResource("9_r72dd")
+
+[node name="TreeCircle5" type="Sprite2D" parent="." unique_id=361103381]
+position = Vector2(974, 757.99994)
+scale = Vector2(0.105, 0.105)
+texture = ExtResource("10_ijn0p")
