@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var status_label: Label = $CanvasLayer/StatusLabel
-@onready var restart_button: Button = $CanvasLayer/RestartButton
+@onready var status_label: Label = $CanvasLayer/Control/StatusLabel
+@onready var restart_button: Button = $CanvasLayer/Control/RestartButton
 
 func _ready() -> void:
 	for path in [$EntryPath, $StraightPath, $BranchPath]:
