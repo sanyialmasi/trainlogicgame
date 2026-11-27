@@ -1,12 +1,13 @@
 extends Node2D
 
-@onready var status_label: Label = $CanvasLayer/Control/StatusLabel
-@onready var restart_button: Button = $CanvasLayer/Control/RestartButton
+
+@onready var game_hud: CanvasLayer = $GameHud
+
 
 func _ready() -> void:
 	for path in [$EntryPath, $StraightPath, $BranchPath]:
 		_build_realistic_track(path)
-
+	
 	$TrackSwitch.switched.connect(_on_switch_changed)
 	_on_switch_changed($TrackSwitch.is_branching)
 
@@ -14,15 +15,6 @@ func _ready() -> void:
 	train.level_completed.connect(_on_level_finished.bind(true))
 	train.level_failed.connect(_on_level_finished.bind(false))
 
-	status_label.position = Vector2(200, 40)
-	status_label.add_theme_font_size_override("font_size", 32)
-	status_label.visible = true
-	status_label.text = "zárd le a sorompót és engedd a vonatot az 1-es peronra"
-
-	restart_button.position = Vector2(850, 110)
-	restart_button.text = "Újrapróbálás"
-	restart_button.visible = false
-	restart_button.pressed.connect(get_tree().reload_current_scene)
 
 func _build_realistic_track(path: Path2D) -> void:
 	var highlight_line: Line2D = path.get_node("Line2D")
@@ -76,8 +68,9 @@ func _build_realistic_track(path: Path2D) -> void:
 func _on_switch_changed(is_branching: bool) -> void:
 	$StraightPath/Line2D.default_color = Color(1.0, 0.85, 0.2, 0.0) if is_branching else Color(1.0, 0.85, 0.2, 0.45)
 	$BranchPath/Line2D.default_color = Color(1.0, 0.85, 0.2, 0.45) if is_branching else Color(1.0, 0.85, 0.2, 0.0)
+	
 
 func _on_level_finished(message: String, is_win: bool) -> void:
-	status_label.text = message
-	status_label.modulate = Color.LIGHT_GREEN if is_win else Color.SALMON
-	restart_button.visible = true
+	$GameHud.show_end_popup(is_win, message)
+	
+	

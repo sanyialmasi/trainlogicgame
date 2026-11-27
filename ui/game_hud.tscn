@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://5b2wfcdpqbrg"]
+
+[ext_resource type="Script" uid="uid://bjy7xxyoqyas8" path="res://ui/game_hud.gd" id="1_5bps4"]
+[ext_resource type="Theme" uid="uid://c8vlucsy2aj3u" path="res://ui/main_theme.tres" id="1_yi54v"]
+[ext_resource type="Texture2D" uid="uid://wcgktfnenw37" path="res://icon.svg" id="2_io01e"]
+
+[node name="GameHud" type="CanvasLayer" unique_id=1489769498]
+process_mode = 3
+script = ExtResource("1_5bps4")
+
+[node name="Control" type="Control" parent="." unique_id=895261849]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_yi54v")
+
+[node name="TopLeftBar" type="MarginContainer" parent="Control" unique_id=1306949306]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TopLeftBar" unique_id=644568141]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MenuButton" type="Button" parent="Control/TopLeftBar/HBoxContainer" unique_id=1628976345]
+custom_minimum_size = Vector2(130, 48)
+layout_mode = 2
+text = "Főmenü"
+icon = ExtResource("2_io01e")
+expand_icon = true
+
+[node name="RestartButton" type="Button" parent="Control/TopLeftBar/HBoxContainer" unique_id=1939014199]
+custom_minimum_size = Vector2(130, 48)
+layout_mode = 2
+text = "Újra"
+icon = ExtResource("2_io01e")
+expand_icon = true
+
+[node name="TopCenterBar" type="MarginContainer" parent="Control" unique_id=1606090974]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/TopCenterBar" unique_id=1158185102]
+layout_mode = 2
+
+[node name="LevelTitleLabel" type="Label" parent="Control/TopCenterBar/PanelContainer" unique_id=1388134962]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "1. pálya"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TaskCheckList" type="MarginContainer" parent="Control" unique_id=798603609]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/TaskCheckList" unique_id=1511457538]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TaskCheckList/PanelContainer" unique_id=1904743182]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TaskCheckList/PanelContainer/MarginContainer" unique_id=1902996295]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HeaderBox" type="HBoxContainer" parent="Control/TaskCheckList/PanelContainer/MarginContainer/VBoxContainer" unique_id=1023620289]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TaskCheckList/PanelContainer/MarginContainer/VBoxContainer/HeaderBox" unique_id=1228879698]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_io01e")
+expand_mode = 1
+
+[node name="TaskListLabel" type="Label" parent="Control/TaskCheckList/PanelContainer/MarginContainer/VBoxContainer/HeaderBox" unique_id=229691833]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="BottomRightBar" type="MarginContainer" parent="Control" unique_id=1270872863]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="EncyclopediaButton" type="Button" parent="Control/BottomRightBar" unique_id=2116190950]
+custom_minimum_size = Vector2(200, 52)
+layout_mode = 2
+text = "Vasúti Tudástár"
+icon = ExtResource("2_io01e")
+expand_icon = true
+
+[node name="DarkOverlay" type="ColorRect" parent="Control" unique_id=205981766]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54901963)
+
+[node name="StartPopup" type="CenterContainer" parent="Control" unique_id=1671245960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="Control/StartPopup" unique_id=1881380604]
+layout_mode = 2
+
+[node name="PanelContainer" type="MarginContainer" parent="Control/StartPopup/PanelContainer2" unique_id=602198718]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/StartPopup/PanelContainer2/PanelContainer" unique_id=1944775324]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="StartTitle" type="Label" parent="Control/StartPopup/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1599861439]
+layout_mode = 2
+text = "1. pálya: gyakorló"
+
+[node name="StartDescription" type="Label" parent="Control/StartPopup/PanelContainer2/PanelContainer/VBoxContainer" unique_id=450934445]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+text = "kezdőleírás"
+autowrap_mode = 2
+
+[node name="StartLevelButton" type="Button" parent="Control/StartPopup/PanelContainer2/PanelContainer/VBoxContainer" unique_id=1370378707]
+layout_mode = 2
+text = "Indulás!"
+
+[node name="EncyclopediaPopup" type="CenterContainer" parent="Control" unique_id=461554062]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/EncyclopediaPopup" unique_id=171189270]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/EncyclopediaPopup/PanelContainer" unique_id=1371357888]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/EncyclopediaPopup/PanelContainer/MarginContainer" unique_id=1674986260]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="EncyclopediaTitle" type="Label" parent="Control/EncyclopediaPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=1316052719]
+layout_mode = 2
+text = "Vasúti Tudástár"
+
+[node name="TabContainer" type="TabContainer" parent="Control/EncyclopediaPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=1637691527]
+layout_mode = 2
+
+[node name="CloseEncyclopediaButton" type="Button" parent="Control/EncyclopediaPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=1468786376]
+layout_mode = 2
+text = "Bezárás"
+
+[node name="EndPopup" type="CenterContainer" parent="Control" unique_id=133835950]
+visible = false
+layout_mode = 0
+offset_left = 823.0
+offset_top = 443.0
+offset_right = 1096.0
+offset_bottom = 636.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/EndPopup" unique_id=1116991219]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/EndPopup/PanelContainer" unique_id=1242206620]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/EndPopup/PanelContainer/MarginContainer" unique_id=1978768689]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ResultTitle" type="Label" parent="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=976145002]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="ResultMessage" type="Label" parent="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=1456401401]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="PopupButtons" type="HBoxContainer" parent="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer" unique_id=719789280]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="PopupRestartButton" type="Button" parent="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer/PopupButtons" unique_id=1036494413]
+layout_mode = 2
+text = "Újrakezdés"
+
+[node name="PopupMenuButton" type="Button" parent="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer/PopupButtons" unique_id=1110933828]
+layout_mode = 2
+text = "Főmenü
+"
+
+[connection signal="pressed" from="Control/TopLeftBar/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Control/TopLeftBar/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/BottomRightBar/EncyclopediaButton" to="." method="_on_encyclopedia_button_pressed"]
+[connection signal="pressed" from="Control/StartPopup/PanelContainer2/PanelContainer/VBoxContainer/StartLevelButton" to="." method="_on_start_level_button_pressed"]
+[connection signal="pressed" from="Control/EncyclopediaPopup/PanelContainer/MarginContainer/VBoxContainer/CloseEncyclopediaButton" to="." method="_on_close_encyclopedia_button_pressed"]
+[connection signal="pressed" from="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer/PopupButtons/PopupRestartButton" to="." method="_on_popup_restart_button_pressed"]
+[connection signal="pressed" from="Control/EndPopup/PanelContainer/MarginContainer/VBoxContainer/PopupButtons/PopupMenuButton" to="." method="_on_popup_menu_button_pressed"]

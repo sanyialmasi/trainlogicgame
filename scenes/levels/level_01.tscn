@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwo1rvfqmpab" path="res://scenes/objects/station_goal.tscn" id="3_50wog"]
 [ext_resource type="PackedScene" uid="uid://bhs6isdxncdrs" path="res://scenes/objects/track_switch.tscn" id="3_uvc87"]
 [ext_resource type="PackedScene" uid="uid://bnhwtrjoyjev2" path="res://scenes/objects/rail_barrier.tscn" id="6_1ey3t"]
-[ext_resource type="Theme" uid="uid://c8vlucsy2aj3u" path="res://ui/main_theme.tres" id="7_ijn0p"]
+[ext_resource type="PackedScene" uid="uid://5b2wfcdpqbrg" path="res://ui/game_hud.tscn" id="8_jmes4"]
 [ext_resource type="Texture2D" uid="uid://cm3n83xu8rl4b" path="res://assets/textures/environment/pinewood.png" id="8_t0hvh"]
 [ext_resource type="Texture2D" uid="uid://b8loona0v4uhi" path="res://assets/textures/environment/tree-circle2.png" id="9_r72dd"]
 [ext_resource type="Texture2D" uid="uid://b8ja0p87rfjwc" path="res://assets/textures/environment/tree-circle5.png" id="10_ijn0p"]
@@ -73,34 +73,6 @@ branch_path = NodePath("../BranchPath")
 [node name="RailBarrier" parent="." unique_id=212173070 instance=ExtResource("6_1ey3t")]
 position = Vector2(1200, 498)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=140857315]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=1925194802]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("7_ijn0p")
-
-[node name="StatusLabel" type="Label" parent="CanvasLayer/Control" unique_id=824565747]
-visible = false
-layout_mode = 0
-offset_left = 200.0
-offset_top = 50.0
-offset_right = 265.0
-offset_bottom = 95.0
-theme_override_font_sizes/font_size = 32
-text = "Újra"
-
-[node name="RestartButton" type="Button" parent="CanvasLayer/Control" unique_id=365864155]
-visible = false
-layout_mode = 0
-offset_left = 850.0
-offset_top = 200.0
-offset_right = 891.0
-offset_bottom = 231.0
-text = "Újra"
-
 [node name="StationGoal" parent="." unique_id=2026654803 instance=ExtResource("3_50wog")]
 position = Vector2(1529, 497)
 
@@ -123,3 +95,5 @@ texture = ExtResource("9_r72dd")
 position = Vector2(974, 757.99994)
 scale = Vector2(0.105, 0.105)
 texture = ExtResource("10_ijn0p")
+
+[node name="GameHud" parent="." unique_id=603502622 instance=ExtResource("8_jmes4")]
